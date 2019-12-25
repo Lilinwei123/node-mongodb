@@ -87,7 +87,12 @@ const handleBlogRouter = async (req, res) => {
     const id = parseInt(req.query.id);
     const result = await updateBlog(id, req.body);
 
-    return new SuccessModel(result);
+    if (result) {
+      return new SuccessModel(result);
+    } else {
+      return new ErrorModel('更新博客失败！');
+    }
+    
   }
 
   // 删除某条博客
@@ -101,7 +106,12 @@ const handleBlogRouter = async (req, res) => {
     const id = parseInt(req.query.id);
     const result = await delBlog(id);
 
-    return new SuccessModel(result);
+    if (result) {
+      return new SuccessModel(result);
+    } else {
+      return new ErrorModel('删除失败');
+    }
+    
   }
 }
 
