@@ -17,6 +17,6 @@
     "nodemon": "^1.19.4"
   },
   "dependencies": {
-    "xlsx": "^0.15.1"
+    "xlsx": "^0.17.0"
   }
 }
